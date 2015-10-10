@@ -161,7 +161,17 @@ long z1Val = 0;
 long z2Val = 0;
 long Touched = 0;
 long TouchCounter = 0;
-
+long TouchBlue = 0;
+long TouchMagenta = 0;
+long TouchOrange = 0;
+long TouchBlue2 = 0;
+long TouchPeach = 0;
+long TouchYellow = 0;
+long TouchRed= 0;
+long TouchPink = 0;
+long firstfac = 0;
+long secondfac = 0;
+long yValold = 0;
 void touchDebug(){
         long temp, blahX, blahY; 
         
@@ -176,26 +186,35 @@ void touchDebug(){
         blahX = (temp >> 16);
         blahY = temp & 0xFFFF;
 	      LCD_Goto(0,0);
-				printf("TOUCH COUNTER = %d \n", TouchCounter);
-        if (Touched) {
-            if (TouchCounter == 0){
-                LCD_Goto(20, 20);
-                printf("touched!");
-            }
+				printf("TC = %d  TBlue = %d  TMag = %d  TOrange = %d  TBlue2 = %d  TPeach = %d   TYellow = %d   TRed = %d   TPink = %d\n",
+	TouchCounter,TouchBlue,TouchRed,TouchOrange,TouchBlue2,TouchPeach,TouchYellow,TouchRed,TouchPink);
+      if(yVal > 135+yValold  || yVal < yValold-135){
+				if(yVal != 0){
+				firstfac = 0;
+				secondfac = 0;
+			}
+			}
+			if (firstfac == 0) {
+					firstfac = 1;
+					yValold = yVal;
+						}
+				if(firstfac == 1 && secondfac == 0){
             TouchCounter++;
-            if (TouchCounter >= 10){
-                LCD_Goto(20,20);
-                printf("        ");
+            if (TouchCounter >= 100){
+                //LCD_Goto(20,20);
+                //printf("        ");
                 TouchCounter = 0;
                 Touched = 0;
-            }   
-        }
+            }
+							secondfac = 1;
+				}
+			
         
         //Print_TouchCoords();
 //        if (xVal < 100) xVal = 0;
 //        if (yVal < 170) yVal = 0;
         
-        LCD_Goto(30,30);
+        //LCD_Goto(20,20);
         printf("xVal = %d   \nyVal = %d   \nZ1Val = %d   \nZ2Val = %d   \nxPos = %d   \nyPos = %d   \n", xVal, yVal, z1Val, z2Val, blahX, blahY);
 }
 
@@ -208,3 +227,5 @@ void Print_TouchCoords(void){
 //    printf("xVal = %d  \nyVal = %d   \n%d", temp.x, temp.y, n);
     
 }
+
+

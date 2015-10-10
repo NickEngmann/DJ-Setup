@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\LCDTest.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\LCDTest.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Oct 10 16:02:47 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Oct 10 17:21:51 2015
 <BR><P>
-<H3>Maximum Stack Usage =        180 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        196 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 <P>
@@ -862,7 +862,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7c]"></a>main</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcdtestmain.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 180 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 196 + Unknown Stack Size
 <LI>Call Chain = main &rArr; touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
@@ -888,8 +888,8 @@ Global Symbols
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintFloat
 </UL>
 
-<P><STRONG><a name="[a1]"></a>touchDebug</STRONG> (Thumb, 134 bytes, Stack size 32 bytes, lcdtestmain.o(i.touchDebug))
-<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
+<P><STRONG><a name="[a1]"></a>touchDebug</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, lcdtestmain.o(i.touchDebug))
+<BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2

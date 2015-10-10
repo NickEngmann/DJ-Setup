@@ -167,8 +167,9 @@ Removing Unused input sections from the image.
     Removing lcdtestmain.o(i.charTest), (28 bytes).
     Removing lcdtestmain.o(i.printfTest), (104 bytes).
     Removing lcdtestmain.o(i.sizeofStuff), (200 bytes).
+    Removing lcdtestmain.o(.data), (4 bytes).
 
-27 unused section(s) (total 2511 bytes) removed from the image.
+28 unused section(s) (total 2515 bytes) removed from the image.
 
 ==============================================================================
 
@@ -256,15 +257,15 @@ Image Symbol Table
     i.main                                   0x00000f30   Section        0  lcdtestmain.o(i.main)
     i.printf                                 0x00000f54   Section        0  ssd2119.o(i.printf)
     i.touchDebug                             0x00000fd4   Section        0  lcdtestmain.o(i.touchDebug)
-    .constdata                               0x00001094   Section      540  ssd2119.o(.constdata)
-    ASCII                                    0x00001094   Data         480  ssd2119.o(.constdata)
-    .constdata                               0x000012b0   Section      305  lcdtestmain.o(.constdata)
+    .constdata                               0x00001084   Section      540  ssd2119.o(.constdata)
+    ASCII                                    0x00001084   Data         480  ssd2119.o(.constdata)
+    .constdata                               0x000012a0   Section      417  lcdtestmain.o(.constdata)
     .data                                    0x20000000   Section       10  ssd2119.o(.data)
-    .data                                    0x2000000c   Section       36  lcdtestmain.o(.data)
-    DATA                                     0x20000030   Section        4  random.o(DATA)
-    M                                        0x20000030   Data           4  random.o(DATA)
-    STACK                                    0x20000038   Section     1024  startup.o(STACK)
-    StackMem                                 0x20000038   Data           0  startup.o(STACK)
+    .data                                    0x2000000c   Section       76  lcdtestmain.o(.data)
+    DATA                                     0x20000058   Section        4  random.o(DATA)
+    M                                        0x20000058   Data           4  random.o(DATA)
+    STACK                                    0x20000060   Section     1024  startup.o(STACK)
+    StackMem                                 0x20000060   Data           0  startup.o(STACK)
 
     Global Symbols
 
@@ -453,11 +454,11 @@ Image Symbol Table
     convertColor                             0x00000f1f   Thumb Code    16  ssd2119.o(i.convertColor)
     main                                     0x00000f31   Thumb Code    30  lcdtestmain.o(i.main)
     printf                                   0x00000f55   Thumb Code   128  ssd2119.o(i.printf)
-    touchDebug                               0x00000fd5   Thumb Code   134  lcdtestmain.o(i.touchDebug)
-    Color4                                   0x00001274   Data          32  ssd2119.o(.constdata)
-    testSprite4BPP                           0x000012b0   Data         128  lcdtestmain.o(.constdata)
-    Region$$Table$$Base                      0x000013e4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001404   Number         0  anon$$obj.o(Region$$Table)
+    touchDebug                               0x00000fd5   Thumb Code   168  lcdtestmain.o(i.touchDebug)
+    Color4                                   0x00001264   Data          32  ssd2119.o(.constdata)
+    testSprite4BPP                           0x000012a0   Data         128  lcdtestmain.o(.constdata)
+    Region$$Table$$Base                      0x00001444   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001464   Number         0  anon$$obj.o(Region$$Table)
     cursorX                                  0x20000000   Data           2  ssd2119.o(.data)
     cursorY                                  0x20000002   Data           2  ssd2119.o(.data)
     textColor                                0x20000004   Data           2  ssd2119.o(.data)
@@ -472,7 +473,17 @@ Image Symbol Table
     z2Val                                    0x20000024   Data           4  lcdtestmain.o(.data)
     Touched                                  0x20000028   Data           4  lcdtestmain.o(.data)
     TouchCounter                             0x2000002c   Data           4  lcdtestmain.o(.data)
-    __initial_sp                             0x20000438   Data           0  startup.o(STACK)
+    TouchBlue                                0x20000030   Data           4  lcdtestmain.o(.data)
+    TouchOrange                              0x20000034   Data           4  lcdtestmain.o(.data)
+    TouchBlue2                               0x20000038   Data           4  lcdtestmain.o(.data)
+    TouchPeach                               0x2000003c   Data           4  lcdtestmain.o(.data)
+    TouchYellow                              0x20000040   Data           4  lcdtestmain.o(.data)
+    TouchRed                                 0x20000044   Data           4  lcdtestmain.o(.data)
+    TouchPink                                0x20000048   Data           4  lcdtestmain.o(.data)
+    firstfac                                 0x2000004c   Data           4  lcdtestmain.o(.data)
+    secondfac                                0x20000050   Data           4  lcdtestmain.o(.data)
+    yValold                                  0x20000054   Data           4  lcdtestmain.o(.data)
+    __initial_sp                             0x20000460   Data           0  startup.o(STACK)
 
 
 
@@ -482,28 +493,28 @@ Memory Map of the image
 
   Image Entry point : 0x00000295
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001438, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000014c0, Max: 0x00040000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00001404, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00001464, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000294   Code   RO            3    RESET               startup.o
-    0x00000294   0x00000000   Code   RO          390  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000294   0x00000004   Code   RO          399    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000298   0x00000004   Code   RO          402    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x0000029c   0x00000000   Code   RO          404    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x0000029c   0x00000000   Code   RO          406    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x0000029c   0x00000008   Code   RO          407    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000002a4   0x00000000   Code   RO          409    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000002a4   0x00000000   Code   RO          411    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000002a4   0x00000004   Code   RO          400    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000294   0x00000000   Code   RO          391  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000294   0x00000004   Code   RO          400    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000298   0x00000004   Code   RO          403    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000029c   0x00000000   Code   RO          405    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000029c   0x00000000   Code   RO          407    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000029c   0x00000008   Code   RO          408    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000002a4   0x00000000   Code   RO          410    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000002a4   0x00000000   Code   RO          412    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000002a4   0x00000004   Code   RO          401    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000002a8   0x00000028   Code   RO          263    .text               random.o
-    0x000002d0   0x00000024   Code   RO          393    .text               mc_w.l(memcpya.o)
-    0x000002f4   0x00000026   Code   RO          397    .text               mf_w.l(f2d.o)
-    0x0000031a   0x00000000   Code   RO          413    .text               mc_w.l(iusefp.o)
+    0x000002d0   0x00000024   Code   RO          394    .text               mc_w.l(memcpya.o)
+    0x000002f4   0x00000026   Code   RO          398    .text               mf_w.l(f2d.o)
+    0x0000031a   0x00000000   Code   RO          414    .text               mc_w.l(iusefp.o)
     0x0000031a   0x00000002   PAD
-    0x0000031c   0x00000024   Code   RO          414    .text               mc_w.l(init.o)
+    0x0000031c   0x00000024   Code   RO          415    .text               mc_w.l(init.o)
     0x00000340   0x00000078   Code   RO           28    i.ADC_Init          ssd2119.o
     0x000003b8   0x0000001c   Code   RO           29    i.ADC_Read          ssd2119.o
     0x000003d4   0x00000030   Code   RO           30    i.ADC_SetChannel    ssd2119.o
@@ -532,30 +543,30 @@ Memory Map of the image
     0x00000cb8   0x000000c8   Code   RO           59    i.Touch_ReadY       ssd2119.o
     0x00000d80   0x000000b8   Code   RO           60    i.Touch_ReadZ1      ssd2119.o
     0x00000e38   0x000000c8   Code   RO           61    i.Touch_ReadZ2      ssd2119.o
-    0x00000f00   0x0000000e   Code   RO          418    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000f0e   0x00000002   Code   RO          419    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000f10   0x0000000e   Code   RO          420    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000f00   0x0000000e   Code   RO          419    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000f0e   0x00000002   Code   RO          420    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000f10   0x0000000e   Code   RO          421    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x00000f1e   0x00000010   Code   RO           63    i.convertColor      ssd2119.o
     0x00000f2e   0x00000002   PAD
     0x00000f30   0x00000024   Code   RO          280    i.main              lcdtestmain.o
     0x00000f54   0x00000080   Code   RO           64    i.printf            ssd2119.o
-    0x00000fd4   0x000000c0   Code   RO          283    i.touchDebug        lcdtestmain.o
-    0x00001094   0x0000021c   Data   RO           65    .constdata          ssd2119.o
-    0x000012b0   0x00000131   Data   RO          284    .constdata          lcdtestmain.o
-    0x000013e1   0x00000003   PAD
-    0x000013e4   0x00000020   Data   RO          416    Region$$Table       anon$$obj.o
+    0x00000fd4   0x000000b0   Code   RO          283    i.touchDebug        lcdtestmain.o
+    0x00001084   0x0000021c   Data   RO           65    .constdata          ssd2119.o
+    0x000012a0   0x000001a1   Data   RO          284    .constdata          lcdtestmain.o
+    0x00001441   0x00000003   PAD
+    0x00001444   0x00000020   Data   RO          417    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000438, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000460, Max: 0x00008000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x0000000a   Data   RW           67    .data               ssd2119.o
     0x2000000a   0x00000002   PAD
-    0x2000000c   0x00000024   Data   RW          285    .data               lcdtestmain.o
-    0x20000030   0x00000004   Data   RW          262    DATA                random.o
-    0x20000034   0x00000004   PAD
-    0x20000038   0x00000400   Zero   RW            1    STACK               startup.o
+    0x2000000c   0x0000004c   Data   RW          285    .data               lcdtestmain.o
+    0x20000058   0x00000004   Data   RW          262    DATA                random.o
+    0x2000005c   0x00000004   PAD
+    0x20000060   0x00000400   Zero   RW            1    STACK               startup.o
 
 
 ==============================================================================
@@ -565,14 +576,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       356         76        305         36          0       2633   lcdtestmain.o
+       340         26        417         76          0       3076   lcdtestmain.o
         96          6          0          0          0       1859   pll.o
         40         12          0          4          0        176   random.o
       2928        256        540         10          0      18119   ssd2119.o
        660        620          0          0       1024        736   startup.o
 
     ----------------------------------------------------------------------
-      4082        970        880         52       1028      23523   Object Totals
+      4066        920        992         92       1028      23966   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          3          2          4          0   (incl. Padding)
 
@@ -615,15 +626,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4244        986        880         52       1028      21127   Grand Totals
-      4244        986        880         52       1028      21127   ELF Image Totals
-      4244        986        880         52          0          0   ROM Totals
+      4228        936        992         92       1028      21570   Grand Totals
+      4228        936        992         92       1028      21570   ELF Image Totals
+      4228        936        992         92          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5124 (   5.00kB)
-    Total RW  Size (RW Data + ZI Data)              1080 (   1.05kB)
-    Total ROM Size (Code + RO Data + RW Data)       5176 (   5.05kB)
+    Total RO  Size (Code + RO Data)                 5220 (   5.10kB)
+    Total RW  Size (RW Data + ZI Data)              1120 (   1.09kB)
+    Total ROM Size (Code + RO Data + RW Data)       5312 (   5.19kB)
 
 ==============================================================================
 
