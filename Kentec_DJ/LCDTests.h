@@ -134,6 +134,19 @@ void RandomCircle(){
     LCD_DrawFilledCircle(Random()%280 + 20, Random()%200 + 20, 20, Random()%0xFFFF);    
 }
 
+void CircleButtons(unsigned short x, unsigned short y, unsigned short radius, short color){
+	LCD_DrawFilledCircle(x, y, radius, color);
+}
+void Buttons_Init(){
+		CircleButtons(50, 120, 30, 255);
+		CircleButtons(50, 200, 30, -400);
+		CircleButtons(125, 120, 30, -1100);
+		CircleButtons(125, 200, 30, -50);
+		CircleButtons(200, 120, 30, -255);
+		CircleButtons(200, 200, 30, -800);
+		CircleButtons(275, 120, 30, 255);
+		CircleButtons(275, 200, 30, -321);
+}
 void Random4BPPTestSprite(){
     LCD_DrawImage(testSprite4BPP, Random()%304, Random()%224, 16, 16, 4);
 }
@@ -157,39 +170,41 @@ void touchDebug(){
         yVal = Touch_ReadY();      // 24-14
         xVal = Touch_ReadX();      // 29-16
         z1Val = Touch_ReadZ1();
-        //z2Val = Touch_ReadZ2();
+        z2Val = Touch_ReadZ2();
 
         temp = Touch_GetCoords();
         blahX = (temp >> 16);
         blahY = temp & 0xFFFF;
-//        if (Touched) {
-//            if (TouchCounter == 0){
-//                LCD_Goto(20, 20);
-//                printf("touched!");
-//            }
-//            TouchCounter++;
-//            if (TouchCounter >= 10){
-//                LCD_Goto(20,20);
-//                printf("        ");
-//                TouchCounter = 0;
-//                Touched = 0;
-//            }   
-//        }
+	      LCD_Goto(0,0);
+				printf("TOUCH COUNTER = %d \n", TouchCounter);
+        if (Touched) {
+            if (TouchCounter == 0){
+                LCD_Goto(20, 20);
+                printf("touched!");
+            }
+            TouchCounter++;
+            if (TouchCounter >= 10){
+                LCD_Goto(20,20);
+                printf("        ");
+                TouchCounter = 0;
+                Touched = 0;
+            }   
+        }
         
         //Print_TouchCoords();
 //        if (xVal < 100) xVal = 0;
 //        if (yVal < 170) yVal = 0;
         
-        LCD_Goto(0,0);
+        LCD_Goto(30,30);
         printf("xVal = %d   \nyVal = %d   \nZ1Val = %d   \nZ2Val = %d   \nxPos = %d   \nyPos = %d   \n", xVal, yVal, z1Val, z2Val, blahX, blahY);
 }
 
-//void Print_TouchCoords(void){
+void Print_TouchCoords(void){
 //    coord temp;
 //    
 //    temp = Touch_GetCoords();
 //    
 //    LCD_Goto(0,0);
 //    printf("xVal = %d  \nyVal = %d   \n%d", temp.x, temp.y, n);
-//    
-//}
+    
+}
