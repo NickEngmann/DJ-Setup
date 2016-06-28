@@ -576,14 +576,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       340         26        417         76          0       3076   lcdtestmain.o
-        96          6          0          0          0       1859   pll.o
-        40         12          0          4          0        176   random.o
-      2928        256        540         10          0      18119   ssd2119.o
-       660        620          0          0       1024        736   startup.o
+       340         26        417         76          0       3132   lcdtestmain.o
+        96          6          0          0          0       1871   pll.o
+        40         12          0          4          0        184   random.o
+      2928        256        540         10          0      18383   ssd2119.o
+       660        620          0          0       1024        748   startup.o
 
     ----------------------------------------------------------------------
-      4066        920        992         92       1028      23966   Object Totals
+      4066        920        992         92       1028      24318   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          3          2          4          0   (incl. Padding)
 
@@ -626,8 +626,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4228        936        992         92       1028      21570   Grand Totals
-      4228        936        992         92       1028      21570   ELF Image Totals
+      4228        936        992         92       1028      21922   Grand Totals
+      4228        936        992         92       1028      21922   ELF Image Totals
       4228        936        992         92          0          0   ROM Totals
 
 ==============================================================================
