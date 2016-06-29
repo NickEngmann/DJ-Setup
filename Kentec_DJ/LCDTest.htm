@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\LCDTest.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\LCDTest.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Jun 28 19:34:23 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Jun 29 13:06:07 2016
 <BR><P>
-<H3>Maximum Stack Usage =        196 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        188 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 <P>
@@ -13,8 +13,8 @@ main &rArr; touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintStri
 Functions with no stack information
 </H3><UL>
  <LI><a href="#[0]">Reset_Handler</a>
- <LI><a href="#[a0]">Random_Init</a>
- <LI><a href="#[a8]">Random</a>
+ <LI><a href="#[9f]">Random_Init</a>
+ <LI><a href="#[a1]">Random</a>
 </UL>
 </UL>
 <P>
@@ -601,25 +601,27 @@ Global Symbols
 
 <P><STRONG><a name="[a7]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[a0]"></a>Random_Init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, random.o(.text))
+<P><STRONG><a name="[9f]"></a>Random_Init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, random.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a8]"></a>Random</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, random.o(.text), UNUSED)
-
-<P><STRONG><a name="[a9]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
-
-<P><STRONG><a name="[96]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetCoords
+<P><STRONG><a name="[a1]"></a>Random</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, random.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[aa]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[a8]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+
+<P><STRONG><a name="[95]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetCoords
+</UL>
+
+<P><STRONG><a name="[a9]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[90]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintFloat
 </UL>
 
-<P><STRONG><a name="[ab]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[aa]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[7f]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
@@ -627,61 +629,55 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[ac]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[ab]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[98]"></a>ADC_Init</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_Init
+<P><STRONG><a name="[97]"></a>ADC_Init</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_Init
 </UL>
 
-<P><STRONG><a name="[9b]"></a>ADC_Read</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_Read))
-<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
+<P><STRONG><a name="[9a]"></a>ADC_Read</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_Read))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
 </UL>
 
-<P><STRONG><a name="[9a]"></a>ADC_SetChannel</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_SetChannel))
-<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
+<P><STRONG><a name="[99]"></a>ADC_SetChannel</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ssd2119.o(i.ADC_SetChannel))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
 </UL>
 
-<P><STRONG><a name="[81]"></a>Buttons_Init</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, lcdtestmain.o(i.Buttons_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = Buttons_Init &rArr; CircleButtons &rArr; LCD_DrawFilledCircle &rArr; LCD_DrawPixel &rArr; LCD_WriteData
+<P><STRONG><a name="[81]"></a>Buttons_Init</STRONG> (Thumb, 196 bytes, Stack size 8 bytes, lcdtestmain.o(i.Buttons_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Buttons_Init &rArr; LCD_DrawFilledRect &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CircleButtons
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertColor
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[82]"></a>CircleButtons</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, lcdtestmain.o(i.CircleButtons))
-<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = CircleButtons &rArr; LCD_DrawFilledCircle &rArr; LCD_DrawPixel &rArr; LCD_WriteData
-</UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledCircle
-</UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_Init
 </UL>
 
 <P><STRONG><a name="[a]"></a>GPIOPortA_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ssd2119.o(i.GPIOPortA_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
 </UL>
-<P><STRONG><a name="[83]"></a>LCD_DrawFilledCircle</STRONG> (Thumb, 204 bytes, Stack size 44 bytes, ssd2119.o(i.LCD_DrawFilledCircle))
-<BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = LCD_DrawFilledCircle &rArr; LCD_DrawPixel &rArr; LCD_WriteData
+<P><STRONG><a name="[83]"></a>LCD_DrawFilledRect</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, ssd2119.o(i.LCD_DrawFilledRect))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_DrawFilledRect &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteData
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CircleButtons
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_Init
 </UL>
 
-<P><STRONG><a name="[84]"></a>LCD_DrawPixel</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_DrawPixel))
+<P><STRONG><a name="[86]"></a>LCD_DrawPixel</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_DrawPixel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteData
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCommand
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteData
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintChar
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledCircle
 </UL>
 
 <P><STRONG><a name="[8a]"></a>LCD_GPIOInit</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, ssd2119.o(i.LCD_GPIOInit))
@@ -691,14 +687,14 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>LCD_Goto</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ssd2119.o(i.LCD_Goto))
 <BR><BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
 <P><STRONG><a name="[89]"></a>LCD_Init</STRONG> (Thumb, 414 bytes, Stack size 12 bytes, ssd2119.o(i.LCD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_Init &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteData
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCommand
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteData
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCommand
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTextColor
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIOInit
@@ -719,7 +715,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintString
@@ -776,101 +772,105 @@ Global Symbols
 <P><STRONG><a name="[8b]"></a>LCD_SetTextColor</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, ssd2119.o(i.LCD_SetTextColor))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LCD_SetTextColor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertColor
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertColor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[85]"></a>LCD_WriteCommand</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_WriteCommand))
+<P><STRONG><a name="[84]"></a>LCD_WriteCommand</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_WriteCommand))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LCD_WriteCommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledRect
 </UL>
 
-<P><STRONG><a name="[86]"></a>LCD_WriteData</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_WriteData))
+<P><STRONG><a name="[85]"></a>LCD_WriteData</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ssd2119.o(i.LCD_WriteData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = LCD_WriteData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPixel
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledRect
 </UL>
 
-<P><STRONG><a name="[9f]"></a>PLL_Init</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, pll.o(i.PLL_Init))
+<P><STRONG><a name="[9e]"></a>PLL_Init</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, pll.o(i.PLL_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[95]"></a>Touch_GetCoords</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, ssd2119.o(i.Touch_GetCoords))
+<P><STRONG><a name="[94]"></a>Touch_GetCoords</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, ssd2119.o(i.Touch_GetCoords))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Touch_GetCoords
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[97]"></a>Touch_Init</STRONG> (Thumb, 46 bytes, Stack size 4 bytes, ssd2119.o(i.Touch_Init))
+<P><STRONG><a name="[96]"></a>Touch_Init</STRONG> (Thumb, 46 bytes, Stack size 4 bytes, ssd2119.o(i.Touch_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Touch_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[99]"></a>Touch_ReadX</STRONG> (Thumb, 198 bytes, Stack size 20 bytes, ssd2119.o(i.Touch_ReadX))
+<P><STRONG><a name="[98]"></a>Touch_ReadX</STRONG> (Thumb, 198 bytes, Stack size 20 bytes, ssd2119.o(i.Touch_ReadX))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Touch_ReadX
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[9c]"></a>Touch_ReadY</STRONG> (Thumb, 182 bytes, Stack size 20 bytes, ssd2119.o(i.Touch_ReadY))
+<P><STRONG><a name="[9b]"></a>Touch_ReadY</STRONG> (Thumb, 182 bytes, Stack size 20 bytes, ssd2119.o(i.Touch_ReadY))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Touch_ReadY
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[9d]"></a>Touch_ReadZ1</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, ssd2119.o(i.Touch_ReadZ1))
+<P><STRONG><a name="[9c]"></a>Touch_ReadZ1</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, ssd2119.o(i.Touch_ReadZ1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Touch_ReadZ1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[9e]"></a>Touch_ReadZ2</STRONG> (Thumb, 186 bytes, Stack size 16 bytes, ssd2119.o(i.Touch_ReadZ2))
+<P><STRONG><a name="[9d]"></a>Touch_ReadZ2</STRONG> (Thumb, 186 bytes, Stack size 16 bytes, ssd2119.o(i.Touch_ReadZ2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Touch_ReadZ2
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetChannel
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 </UL>
 
-<P><STRONG><a name="[ad]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[ac]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[ae]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[ad]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[af]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[ae]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[94]"></a>convertColor</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ssd2119.o(i.convertColor))
-<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTextColor
+<P><STRONG><a name="[82]"></a>convertColor</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ssd2119.o(i.convertColor))
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_Init
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTextColor
 </UL>
 
 <P><STRONG><a name="[7c]"></a>main</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lcdtestmain.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 196 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 188 + Unknown Stack Size
 <LI>Call Chain = main &rArr; touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Buttons_Init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Random_Init
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_Init
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Random_Init
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_Init
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLL_Init
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLL_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
@@ -884,20 +884,24 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintChar
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintBinary
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchDebug
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_PrintFloat
 </UL>
 
-<P><STRONG><a name="[a1]"></a>touchDebug</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, lcdtestmain.o(i.touchDebug))
-<BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
+<P><STRONG><a name="[a0]"></a>touchDebug</STRONG> (Thumb, 780 bytes, Stack size 40 bytes, lcdtestmain.o(i.touchDebug))
+<BR><BR>[Stack]<UL><LI>Max Depth = 188 + Unknown Stack Size
+<LI>Call Chain = touchDebug &rArr; printf &rArr; LCD_PrintBinary &rArr; LCD_PrintString &rArr; LCD_PrintChar &rArr; LCD_DrawPixel &rArr; LCD_WriteData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetCoords
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Random
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printf
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertColor
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ2
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadZ1
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadY
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_ReadX
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touch_GetCoords
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Goto
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFilledRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

@@ -138,14 +138,26 @@ void CircleButtons(unsigned short x, unsigned short y, unsigned short radius, sh
 	LCD_DrawFilledCircle(x, y, radius, color);
 }
 void Buttons_Init(){
-		CircleButtons(50, 120, 30, 255);
-		CircleButtons(50, 200, 30, -400);
-		CircleButtons(125, 120, 30, -1100);
-		CircleButtons(125, 200, 30, -50);
-		CircleButtons(200, 120, 30, -255);
-		CircleButtons(200, 200, 30, -800);
-		CircleButtons(275, 120, 30, 255);
-		CircleButtons(275, 200, 30, -321);
+	//Top Row Buttons
+		//LCD_DrawFilledRect(0, 0, 80, 80, convertColor(255,36,36));
+	//Middle Row Buttons	
+		LCD_DrawFilledRect(0, 80, 80, 80, convertColor(255,255,36)); //Yellow Button
+		LCD_DrawFilledRect(80, 80, 80, 80, convertColor(255,36,36)); //Red Button
+		LCD_DrawFilledRect(160, 80, 80, 80, convertColor(36,39,255)); //Blue Button
+		LCD_DrawFilledRect(240, 80, 80, 80, convertColor(36,255,36)); //Green Button
+	//Bottom Row Buttons	
+		LCD_DrawFilledRect(0, 160, 80, 80, convertColor(255,36,36)); //Red Button
+		LCD_DrawFilledRect(80, 160, 80, 80, convertColor(36,39,255)); //Blue Button
+		LCD_DrawFilledRect(160, 160, 80, 80, convertColor(36,255,36)); //Green Button
+		LCD_DrawFilledRect(240, 160, 80, 80, convertColor(255,255,36)); //Yellow Button
+		//CircleButtons(50, 200, 35, convertColor(255,36,36));
+		//CircleButtons(125, 200, 35, convertColor(36,39,255));
+		//CircleButtons(200, 200, 35, convertColor(36,255,36));
+		//CircleButtons(275, 200, 35, convertColor(255,255,36));
+		//CircleButtons(200, 120, 30, convertColor(255,36,36));
+		//CircleButtons(200, 200, 30, convertColor(255,36,36));
+		//CircleButtons(275, 120, 30, convertColor(255,36,36));
+		//CircleButtons(275, 200, 30, convertColor(255,36,36));
 }
 void Random4BPPTestSprite(){
     LCD_DrawImage(testSprite4BPP, Random()%304, Random()%224, 16, 16, 4);
@@ -161,21 +173,21 @@ long z1Val = 0;
 long z2Val = 0;
 long Touched = 0;
 long TouchCounter = 0;
-long TouchBlue = 0;
-long TouchMagenta = 0;
-long TouchOrange = 0;
-long TouchBlue2 = 0;
-long TouchPeach = 0;
-long TouchYellow = 0;
-long TouchRed= 0;
-long TouchPink = 0;
+long TouchR2C1 = 0;
+long TouchR2C2 = 0;
+long TouchR2C3 = 0;
+long TouchR2C4 = 0;
+long TouchR3C1 = 0;
+long TouchR3C2 = 0;
+long TouchR3C3 = 0;
+long TouchR3C4 = 0;
 long firstfac = 0;
 long secondfac = 0;
 long yValold = 0;
+long randomcolor;
 void touchDebug(){
         long temp, blahX, blahY; 
-        
-        
+     
         // do stuff every however often here
         yVal = Touch_ReadY();      // 24-14
         xVal = Touch_ReadX();      // 29-16
@@ -185,44 +197,112 @@ void touchDebug(){
         temp = Touch_GetCoords();
         blahX = (temp >> 16);
         blahY = temp & 0xFFFF;
-	      LCD_Goto(0,0);
-				printf("TC = %d  TBlue = %d  TMag = %d  TOrange = %d  TBlue2 = %d  TPeach = %d   TYellow = %d   TRed = %d   TPink = %d\n",
-	TouchCounter,TouchBlue,TouchRed,TouchOrange,TouchBlue2,TouchPeach,TouchYellow,TouchRed,TouchPink);
-      if(yVal > 135+yValold  || yVal < yValold-135){
-				if(yVal != 0){
-				firstfac = 0;
-				secondfac = 0;
-			}
+				//This phrase is needed for all print statements.
+				LCD_Goto(0,0);
+				printf("TC = %d\n",
+					TouchCounter);
+				printf("R2C1 = %d R2C2 = %d R2C3 = %d R2C4 = %d\n",
+					TouchR2C1,TouchR2C2,TouchR2C3,TouchR2C4);
+				printf("R3C1 = %d R3C2 = %d R3C3 = %d R3C4 = %d\n",
+					TouchR3C1,TouchR3C2,TouchR3C3,TouchR3C4);
+		if(yVal > 270+yValold  || yVal < yValold-270){			
+				if(yVal != 376){	
+					if(yVal != 0){
+					firstfac = 0;
+					secondfac = 0;
+					}
 			}
 			if (firstfac == 0) {
 					firstfac = 1;
 					yValold = yVal;
 						}
-				if(firstfac == 1 && secondfac == 0){
-            TouchCounter++;
-            if (TouchCounter >= 100){
-                //LCD_Goto(20,20);
-                //printf("        ");
-                TouchCounter = 0;
-                Touched = 0;
-            }
-							secondfac = 1;
+			if(firstfac == 1 && secondfac == 0){
+        TouchCounter++;
+        if(TouchCounter >= 100){
+            TouchCounter = 0;
+            Touched = 0;
+        }
+				//specific if statements for location of touch:
+				
+				//Row 2 (Middle)
+				//Row 2(Middle) Column 1(Left Edge) Corner
+				if(blahX < 295 && blahX > 235){
+					if(blahY <235 && blahY > 210){
+						TouchR2C1++;
+						randomcolor = convertColor(Random() % 255,Random() % 255,255);
+						LCD_DrawFilledRect(0, 80, 80, 80, randomcolor);
+					}
 				}
-			
-        
-        //Print_TouchCoords();
-//        if (xVal < 100) xVal = 0;
-//        if (yVal < 170) yVal = 0;
-        
-        //LCD_Goto(20,20);
-        printf("xVal = %d   \nyVal = %d   \nZ1Val = %d   \nZ2Val = %d   \nxPos = %d   \nyPos = %d   \n", xVal, yVal, z1Val, z2Val, blahX, blahY);
+				//Row 2(Middle) Column 2(Left of Middle) Corner
+				if(blahX < 225 && blahX > 180){
+					if(blahY <210 && blahY > 170){
+						TouchR2C2++;
+						randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
+						LCD_DrawFilledRect(80, 80, 80, 80, randomcolor);
+					}
+				}
+				//Row 2(Middle) Column 3(Right of Middle) Corner
+				if(blahX < 170 && blahX > 125){
+					if(blahY <196 && blahY > 160){
+						TouchR2C3++;
+						randomcolor = convertColor(255,Random() % 255,Random() % 255);
+						LCD_DrawFilledRect(160, 80, 80, 80, randomcolor);
+					}
+				}
+				//Row 2(Middle) Column 4(Right Edge) Corner
+				if((blahX < 110) && (blahX > 80)){
+					if((200 > blahY)&&(blahY > 165)){
+						TouchR2C4++;
+						randomcolor = convertColor(Random() % 255,255,Random() % 255);
+						LCD_DrawFilledRect(240, 80, 80, 80, randomcolor);
+					}
+				}
+				
+				//Row 3(Bottom)
+				//Row 3(Bottom) Column 1(Left Edge) Corner
+				if(blahX < 290 && blahX > 235){
+					if(blahY <305 && blahY > 260){
+						TouchR3C1++;
+						randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
+						LCD_DrawFilledRect(0, 160, 80, 80, randomcolor);
+					}
+				}
+				//Row 3(Bottom) Column 2(Left of Middle) Corner
+				if(blahX < 215 && blahX > 185){
+					if(blahY <280 && blahY > 230){
+						TouchR3C2++;
+						randomcolor = convertColor(255,Random() % 255,Random() % 255);
+						LCD_DrawFilledRect(80, 160, 80, 80, randomcolor);
+					}
+				}
+				//Row 3(Bottom) Column 3(Right of Middle) Corner
+				if(blahX < 170 && blahX > 120){
+					if(blahY <260 && blahY > 230){
+						TouchR3C3++;
+						randomcolor = convertColor(Random() % 255,255,Random() % 255);
+						LCD_DrawFilledRect(160, 160, 80, 80, randomcolor);
+					}
+				}
+				//Row 3(Bottom) Column 4(Right Edge) Corner
+				if((110 > blahX) && (blahX > 80)){
+					if((260 > blahY) && (blahY > 220)){
+						TouchR3C4++;
+						randomcolor = convertColor(Random() % 255,Random() % 255,255);
+						LCD_DrawFilledRect(240, 160, 80, 80, randomcolor);
+					}
+				}
+				secondfac = 1;
+				}			
+
+			yValold = yVal;
+			}
+			printf("xVal:%d     yVal:%d     \nxPos:%d     yPos:%d    ", xVal, yVal, blahX, blahY);
 }
 
 void Print_TouchCoords(void){
-//    coord temp;
-//    
+//    int temp;
 //    temp = Touch_GetCoords();
-//    
+   
 //    LCD_Goto(0,0);
 //    printf("xVal = %d  \nyVal = %d   \n%d", temp.x, temp.y, n);
     
