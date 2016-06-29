@@ -53,37 +53,6 @@ void WaitForInterrupt(void);  // low power mode
 // set when corresponding button pressed
 volatile uint32_t play, rewind, mode, pause; // semaphores
 volatile uint32_t bNote, fNote, aNote, eNote;
-//--PolledButtons_Init--
-//inititalizes Port E interrupts
-
-void PolledButtons_Init(void){
-  DisableInterrupts();
-  SYSCTL_RCGCGPIO_R |= 0x00000010; // activate port E
-  GPIO_PORTE_AMSEL_R &= ~0x30;// disable analog function on PE5-4
-  GPIO_PORTE_PCTL_R &= ~0x00FF0000; // configure PE5-4 as GPIO 
-  GPIO_PORTE_DIR_R &= ~0x30;  // make PE5-4 in 
-  GPIO_PORTE_AFSEL_R &= ~0x30;// disable alt funct on PE5-4 
-  GPIO_PORTE_DEN_R |= 0x30;   // enable digital I/O on PE5-4
-  GPIO_PORTE_IS_R &= ~0x30;   // PE5-4 is edge-sensitive 
-  GPIO_PORTE_IBE_R &= ~0x30;  // PE5-4 is not both edges 
-  GPIO_PORTE_IEV_R |= 0x30;   // PE5-4 rising edge event
-  GPIO_PORTE_ICR_R = 0x30;    // clear flag5-4
-  GPIO_PORTE_IM_R |= 0x30;    // enable interrupt on PE5-4
-                              // GPIO PortE=priority 2
-  NVIC_PRI1_R = (NVIC_PRI1_R&0xFFFFFF00)|0x00000040; // bits 5-7
-  NVIC_EN0_R = NVIC_EN0_INT4; // enable interrupt 4 in NVIC
-  EnableInterrupts();
-}
-void GPIOPortE_Handler(void){
-  if(GPIO_PORTE_RIS_R&0x10){  // poll PE4
-    GPIO_PORTE_ICR_R = 0x10;  // acknowledge flag4
-    rewind = 1;                  // signal SW1 occurred
-  }
-	  if(GPIO_PORTE_RIS_R&0x20){  // poll PE5
-    GPIO_PORTE_ICR_R = 0x20;  // acknowledge flag5
-    rewind = 1;                  // signal SW2 occurred
-  }
-	}
 
 void Board_Init(void){            
   SYSCTL_RCGCGPIO_R |= 0x20;     // 1) activate Port F

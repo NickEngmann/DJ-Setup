@@ -5,8 +5,6 @@
 #include "PLL.h"
 #include "Timer0A.h"
 #include "SysTick.h"
-#include "ST7735.h"
-#include "plotImage.h"
 
 
 #define NVIC_EN0_INT4           0x00000010  // Interrupt 4 enable
@@ -39,18 +37,14 @@ extern unsigned short Time;
 	
 int main(void){
 	HeartBeat_Init();
-  PolledButtons_Init();       // initialize interrupts and ports
 	DAC_Init(1024);							// initialize with command: Vout = Vref
-	//Timer0A_Init(dt[0]);
 	Board_Init();		//Initalize the On Board Switches
 	Switch_Init2(); //i used the board switches because our switches were doing the thing
 							//where they worked for a bit then they stopped working again
 	lenPush = 1;
 	int instrument = 0;
-  ST7735_InitR(INITR_REDTAB);	
 			
 	while(1){
-		plotImage();
 		if(mode){
 			resetSwitches();	
 			

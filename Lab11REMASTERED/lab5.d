@@ -6,5 +6,3 @@
 .\lab5.o: PLL.h
 .\lab5.o: Timer0A.h
 .\lab5.o: SysTick.h
-.\lab5.o: ST7735.h
-.\lab5.o: plotImage.h
