@@ -431,11 +431,6 @@
               <FilePath>.\PLL.c</FilePath>
             </File>
             <File>
-              <FileName>ST7735.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ST7735.c</FilePath>
-            </File>
-            <File>
               <FileName>Switch.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Switch.c</FilePath>
@@ -489,16 +484,6 @@
               <FileName>Timer1A.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Timer1A.c</FilePath>
-            </File>
-            <File>
-              <FileName>plotImage.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\plotImage.c</FilePath>
-            </File>
-            <File>
-              <FileName>plotImage.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\plotImage.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,11 +1,14 @@
 #include <stdint.h>
-#include "inc/tm4c123gh6pm.h"
+//#include "inc/tm4c123gh6pm.h"
 #include "Switch.h"
 #include "DAC.h"
 #include "PLL.h"
 #include "Timer0A.h"
 #include "SysTick.h"
-
+#include "lm4f120h5qr.h"
+#include "SSD2119.h"
+#include "random.h"
+#include "LCDTests.h"
 
 #define NVIC_EN0_INT4           0x00000010  // Interrupt 4 enable
 #define F16HZ (50000000/16)
@@ -37,6 +40,15 @@ extern unsigned short Time;
 	
 int main(void){
 	HeartBeat_Init();
+	
+	LCD_Init();  
+  // Initialize RNG
+  Random_Init(121213);
+  // Initialize touchscreen GPIO
+  Touch_Init();
+	//Initialize On Screen Buttons
+	Buttons_Init();
+	
 	DAC_Init(1024);							// initialize with command: Vout = Vref
 	Board_Init();		//Initalize the On Board Switches
 	Switch_Init2(); //i used the board switches because our switches were doing the thing
@@ -45,6 +57,7 @@ int main(void){
 	int instrument = 0;
 			
 	while(1){
+		touchDebug();
 		if(mode){
 			resetSwitches();	
 			
