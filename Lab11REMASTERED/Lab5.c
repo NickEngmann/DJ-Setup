@@ -42,7 +42,7 @@ extern unsigned short Time;
 int main(void){
 	HeartBeat_Init();
 	DAC_Init(1024);							// initialize with command: Vout = Vref
-	//Timer0A_Init(dt[0]);
+	Timer0A_Init(dt[0]);
 	Board_Init();		//Initalize the On Board Switches
 	Switch_Init2(); //i used the board switches because our switches were doing the thing
 							//where they worked for a bit then they stopped working again
@@ -51,16 +51,24 @@ int main(void){
   Random_Init(121213);
     // Initialize touchscreen GPIO
   Touch_Init();
-	Buttons_Init();
+
 
 	lenPush = 1;
 	int instrument = 0;
-	
 
+  for(i=0; i<50; i=i+1){
+    MovingColorBars();
+	}
+	LCD_ColorFill(convertColor(0, 0, 0));
+	for(i=0; i<1500; i=i+1){
+      Random4BPPTestSprite();
+  }
+	LCD_ColorFill(convertColor(0, 0, 0));
+	Buttons_Init();
+	touchDebug();	
 	while(1){
 		if(mode){
-			resetSwitches();	
-			
+			resetSwitches();			
 			if (instrument == 0){
 				Music_Play(Wave[0], 32, strobePtr, 35);	
 				instrument += 1;

@@ -3,7 +3,6 @@
 
 extern unsigned short cursorX;
 extern unsigned short cursorY;
-
 int x = 0;
 int y = 0;
 int i = 0;  
@@ -52,16 +51,69 @@ void TestStringOutput(){
 void RandomRectangles(){
     LCD_DrawRect(Random() % 200, Random() % 160, Random() % 160, Random() %100, convertColor(Random()%3 * 127, Random()%3 * 127, Random()%3 * 127));
 }
-
-void MovingColorBars(){
-    LCD_DrawPixelRGB(x, y, 0, 0, 255);
-    LCD_DrawPixelRGB(x+30, y, 0, 255, 0);
-    LCD_DrawPixelRGB(x+60, y, 255, 0, 0);
-
-    x++;
-    y++;
-    if (x > 320) { x = 0; };
-    if (y > 240) { y = 0; };    
+int y1 = 90;
+int y2;
+int y3 = 140;
+int y4;
+int y5 = 50;
+int y6;
+void MovingColorBars(){		
+		LCD_DrawFilledRect(17, y1, 32, (240-y1), convertColor(0,0,225));
+		LCD_DrawFilledRect(17, 0, 32, y2, convertColor(0,0,0));
+	
+		LCD_DrawFilledRect(49, y3, 32, (240-y3), convertColor(0,255,0));
+		LCD_DrawFilledRect(49, 0, 32, y4, convertColor(0,0,0));
+	
+		LCD_DrawFilledRect(81, y5, 32, (240-y5), convertColor(255,0,0));
+		LCD_DrawFilledRect(81, 0, 32, y6, convertColor(0,0,0));
+		
+		LCD_DrawFilledRect(113, y5+28, 32, (240-(y5+28)), convertColor(0,0,225));
+		LCD_DrawFilledRect(113, 0, 32, y6+28, convertColor(0,0,0));
+		
+		LCD_DrawFilledRect(145, y5+26, 32, (240-(y5+26)), convertColor(0,255,0));
+		LCD_DrawFilledRect(145, 0, 32, y6+26, convertColor(0,0,0));
+	
+		LCD_DrawFilledRect(177, (y3-10), 32, 240-(y3-10), convertColor(255,0,0));
+		LCD_DrawFilledRect(177, 0, 32, y4-10, convertColor(0,0,0));
+		
+		LCD_DrawFilledRect(209, y5-10, 32, 240-(y5-10), convertColor(0,0,225));
+		LCD_DrawFilledRect(209, 0, 32, y6-10, convertColor(0,0,0));
+	
+		LCD_DrawFilledRect(241, (y1+20), 32, (240-(y1+20)), convertColor(0,255,0));
+		LCD_DrawFilledRect(241, 0, 32, (y2+20), convertColor(0,0,0));
+	
+		LCD_DrawFilledRect(273, y3, 32, 240-y3, convertColor(255,0,0));
+		LCD_DrawFilledRect(273, 0, 32, y4, convertColor(0,0,0));
+		
+		if(rand()% 2 == 1){
+			int a = rand()% 10;
+			y2 = y1 - a;
+			y1 = y1 + a;
+		}
+		else{
+			int b = rand()% 10;
+			y1 = y1 - b;
+		}
+		
+		if( rand()% 2 == 1){
+		int a = rand()% 10;
+			y4 = y3 - a;
+			y3 = y3 + a;
+		}
+		else{
+			int b = rand()% 10;
+			y3 = y3 - b;
+		}
+		
+		if( rand()% 2 == 1){
+		int a = rand()% 10;
+			y6 = y5 - a;
+			y5 = y5 + a;
+		}
+		else{
+			int b = rand()% 10;
+			y5 = y5 - b;
+		}
 }
 
 void RandomColorFill(){

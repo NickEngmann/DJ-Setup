@@ -485,6 +485,36 @@
               <FileType>1</FileType>
               <FilePath>.\Timer1A.c</FilePath>
             </File>
+            <File>
+              <FileName>SSD2119.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SSD2119.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCDTests.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCDTests.h</FilePath>
+            </File>
+            <File>
+              <FileName>lm4f120h5qr.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lm4f120h5qr.h</FilePath>
+            </File>
+            <File>
+              <FileName>random.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\random.h</FilePath>
+            </File>
+            <File>
+              <FileName>SSD2119.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SSD2119.h</FilePath>
+            </File>
+            <File>
+              <FileName>random.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\random.s</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
