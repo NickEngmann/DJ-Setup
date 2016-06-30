@@ -53,6 +53,8 @@ void WaitForInterrupt(void);  // low power mode
 // set when corresponding button pressed
 volatile uint32_t play, rewind, mode, pause; // semaphores
 volatile uint32_t bNote, fNote, aNote, eNote;
+//--PolledButtons_Init--
+//inititalizes Port E interrupts
 
 void Board_Init(void){            
   SYSCTL_RCGCGPIO_R |= 0x20;     // 1) activate Port F

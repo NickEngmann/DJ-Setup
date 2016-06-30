@@ -1,11 +1,12 @@
 #include <stdint.h>
-#include "inc/tm4c123gh6pm.h"
+//#include "inc/tm4c123gh6pm.h"
 #include "Switch.h"
 #include "DAC.h"
 #include "PLL.h"
 #include "Timer0A.h"
 #include "SysTick.h"
-//#include "lm4f120h5qr.h"
+
+#include "lm4f120h5qr.h"
 #include "SSD2119.h"
 #include "random.h"
 #include "LCDTests.h"
@@ -40,24 +41,23 @@ extern unsigned short Time;
 	
 int main(void){
 	HeartBeat_Init();
-	
-	LCD_Init();  
-  // Initialize RNG
-  Random_Init(121213);
-  // Initialize touchscreen GPIO
-  Touch_Init();
-	//Initialize On Screen Buttons
-	Buttons_Init();
-	
 	DAC_Init(1024);							// initialize with command: Vout = Vref
+	//Timer0A_Init(dt[0]);
 	Board_Init();		//Initalize the On Board Switches
 	Switch_Init2(); //i used the board switches because our switches were doing the thing
 							//where they worked for a bit then they stopped working again
+	LCD_Init();  
+    // Initialize RNG
+  Random_Init(121213);
+    // Initialize touchscreen GPIO
+  Touch_Init();
+	Buttons_Init();
+
 	lenPush = 1;
 	int instrument = 0;
-	//MovingColorBars();
+	
+
 	while(1){
-		//touchDebug();
 		if(mode){
 			resetSwitches();	
 			

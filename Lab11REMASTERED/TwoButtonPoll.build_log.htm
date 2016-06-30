@@ -4,12 +4,15 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Nick\Desktop\DJ-Setup\DJ-Setup\Lab11REMASTERED\TwoButtonPoll.uvproj
-Project File Date:  06/29/2016
+Project File Date:  06/30/2016
 
 <h2>Output:</h2>
 Rebuild target 'TwoButtonPoll'
 assembling startup.s...
 compiling DAC.c...
+DAC.c(101): warning:  #1-D: last line of file ends without a newline
+  } 
+DAC.c: 1 warning, 0 errors
 compiling Lab5.c...
 compiling Music.c...
 Music.c(21): warning:  #550-D: variable "testInstr" was set but never used
@@ -20,36 +23,13 @@ compiling Switch.c...
 compiling Timer0A.c...
 compiling SysTick.c...
 compiling Timer1A.c...
+compiling SSD2119.c...
+assembling random.s...
 linking...
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_ColorFill (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawFilledCircle (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawFilledRect (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawImage (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawLine (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawPixelRGB (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_DrawRect (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_Goto (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_Init (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_PrintChar (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_PrintString (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_SetCursor (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol LCD_WriteData (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Random (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Random_Init (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_GetCoords (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_Init (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_ReadX (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_ReadY (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_ReadZ1 (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol Touch_ReadZ2 (referred from lab5.o).
-.\TwoButtonPoll.axf: Error: L6218E: Undefined symbol convertColor (referred from lab5.o).
-Not enough information to list image symbols.
-Finished: 1 information, 0 warning and 22 error messages.
-".\TwoButtonPoll.axf" - 22 Error(s), 1 Warning(s).
-Target not created
-</pre>
-</body>
-</html>
-ges.
-".\TwoButtonPoll.axf" - 22 Error(s), 2 Warning(s).
-Target not created
+Program Size: Code=4424 RO-data=416 RW-data=1220 ZI-data=1124  
+".\TwoButtonPoll.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Nick\\Desktop\\DJ-Setup\\DJ-Setup\\Lab11REMASTERED\\TwoButtonPoll.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

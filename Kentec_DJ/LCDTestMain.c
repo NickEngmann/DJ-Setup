@@ -4,7 +4,7 @@
 #include "random.h"
 #include "LCDTests.h"
 
-int main(void){unsigned long i=0;
+int main(void){
   // Set the clocking to run at 80MHz from the PLL.
 		PLL_Init();
     // Initialize LCD
@@ -17,8 +17,7 @@ int main(void){unsigned long i=0;
       
     for(;;) {
       touchDebug();
-    }
-    
+    }    
 }
 
 
