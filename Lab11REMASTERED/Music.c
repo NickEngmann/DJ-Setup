@@ -5,7 +5,7 @@
 #include "Timer1A.h"
 #include "Music.h"
 #include "SysTick.h"
-int ii, j;
+int i, j;
 extern uint32_t play, rewind, pause;
 extern uint32_t bNote, fNote, aNote, eNote;
 extern int Time, lenPush, notePush;
@@ -16,7 +16,7 @@ extern struct Songs *demo1Ptr;
 
 void Music_Play(const unsigned short *instrument, int instrumentSize, const struct Songs* song, int songSize){
 		int noteIndex=0;
-		int ii=0;
+		int i=0;
 		int pause=0;	
 		const unsigned short *testInstr;
 		testInstr = &Flute[0];
@@ -61,8 +61,8 @@ void Music_Play(const unsigned short *instrument, int instrumentSize, const stru
 		}
 		if(notePush&&!pause){
 			notePush=0;
-			DAC_Out(instrument[ii]);
-			ii=(ii+1)%instrumentSize;
+			DAC_Out(instrument[i]);
+			i=(i+1)%instrumentSize;
 		}
 	}
 
