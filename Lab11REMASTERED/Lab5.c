@@ -1,11 +1,11 @@
 #include <stdint.h>
-//#include "inc/tm4c123gh6pm.h"
+#include "inc/tm4c123gh6pm.h"
 #include "Switch.h"
 #include "DAC.h"
 #include "PLL.h"
 #include "Timer0A.h"
 #include "SysTick.h"
-#include "lm4f120h5qr.h"
+//#include "lm4f120h5qr.h"
 #include "SSD2119.h"
 #include "random.h"
 #include "LCDTests.h"
@@ -55,9 +55,9 @@ int main(void){
 							//where they worked for a bit then they stopped working again
 	lenPush = 1;
 	int instrument = 0;
-			
+	//MovingColorBars();
 	while(1){
-		touchDebug();
+		//touchDebug();
 		if(mode){
 			resetSwitches();	
 			
