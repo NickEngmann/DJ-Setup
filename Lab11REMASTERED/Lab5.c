@@ -56,12 +56,19 @@ int main(void){
 	lenPush = 1;
 	int instrument = 0;
 
-  for(i=0; i<50; i=i+1){
-    MovingColorBars();
+  //for(i=0; i<50; i=i+1){
+	InitializeBars();
+  for(i=0; i<1000; i=i+1){
+	MovingColorBars();
 	}
-	LCD_ColorFill(convertColor(0, 0, 0));
-	for(i=0; i<1500; i=i+1){
-      Random4BPPTestSprite();
+	for(i=0; i<400; i=i+1){
+		DestabilizeBars();
+	}
+	for(i=0; i<350; i=i+1){
+		FinishBars();
+	}
+	for(i=0; i<1000; i=i+1){
+     Random4BPPTestSprite();
   }
 	LCD_ColorFill(convertColor(0, 0, 0));
 	Buttons_Init();

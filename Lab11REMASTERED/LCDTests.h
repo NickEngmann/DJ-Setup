@@ -51,71 +51,271 @@ void TestStringOutput(){
 void RandomRectangles(){
     LCD_DrawRect(Random() % 200, Random() % 160, Random() % 160, Random() %100, convertColor(Random()%3 * 127, Random()%3 * 127, Random()%3 * 127));
 }
-int y1 = 90;
-int y2;
-int y3 = 140;
-int y4;
-int y5 = 50;
-int y6;
-void MovingColorBars(){		
-		LCD_DrawFilledRect(17, y1, 32, (240-y1), convertColor(0,0,225));
-		LCD_DrawFilledRect(17, 0, 32, y2, convertColor(0,0,0));
-	
-		LCD_DrawFilledRect(49, y3, 32, (240-y3), convertColor(0,255,0));
-		LCD_DrawFilledRect(49, 0, 32, y4, convertColor(0,0,0));
-	
-		LCD_DrawFilledRect(81, y5, 32, (240-y5), convertColor(255,0,0));
-		LCD_DrawFilledRect(81, 0, 32, y6, convertColor(0,0,0));
-		
-		LCD_DrawFilledRect(113, y5+28, 32, (240-(y5+28)), convertColor(0,0,225));
-		LCD_DrawFilledRect(113, 0, 32, y6+28, convertColor(0,0,0));
-		
-		LCD_DrawFilledRect(145, y5+26, 32, (240-(y5+26)), convertColor(0,255,0));
-		LCD_DrawFilledRect(145, 0, 32, y6+26, convertColor(0,0,0));
-	
-		LCD_DrawFilledRect(177, (y3-10), 32, 240-(y3-10), convertColor(255,0,0));
-		LCD_DrawFilledRect(177, 0, 32, y4-10, convertColor(0,0,0));
-		
-		LCD_DrawFilledRect(209, y5-10, 32, 240-(y5-10), convertColor(0,0,225));
-		LCD_DrawFilledRect(209, 0, 32, y6-10, convertColor(0,0,0));
-	
-		LCD_DrawFilledRect(241, (y1+20), 32, (240-(y1+20)), convertColor(0,255,0));
-		LCD_DrawFilledRect(241, 0, 32, (y2+20), convertColor(0,0,0));
-	
-		LCD_DrawFilledRect(273, y3, 32, 240-y3, convertColor(255,0,0));
-		LCD_DrawFilledRect(273, 0, 32, y4, convertColor(0,0,0));
-		
+void InitializeBars(){
+			LCD_DrawFilledRect(17, 90, 32, (240-90), convertColor(0,0,255));
+			LCD_DrawFilledRect(49, 120, 32, (240-120), convertColor(0,255,0));
+			LCD_DrawFilledRect(81, 50, 32, (240-50), convertColor(255,0,0));
+			LCD_DrawFilledRect(113, 81, 32, (240-78), convertColor(0,0,255));
+			LCD_DrawFilledRect(145, 76, 32, (240-76), convertColor(0,255,0));
+			LCD_DrawFilledRect(177, 130, 32, (240-130), convertColor(255,0,0));
+			LCD_DrawFilledRect(209, 40, 32, (240-40), convertColor(0,0,255));
+			LCD_DrawFilledRect(241, 110, 32, (240-110), convertColor(0,255,0));
+			LCD_DrawFilledRect(273, 140, 32, (240-140), convertColor(255,0,0));
+
+}
+void dlay(){
+	int j;
+	while(j < 2500){
+		j +=1;
+	}
+	j = 0;
+}
+int y1,y2,y3,y4,y5,y6,y7,y8,y9;
+int slowflag;
+void MovingColorBars(){
+		dlay();
+		dlay();
+		dlay();
+		dlay();
+		dlay();
+		dlay();
+		//first bar
 		if(rand()% 2 == 1){
-			int a = rand()% 10;
-			y2 = y1 - a;
-			y1 = y1 + a;
+			if ( y1 > -90){
+				int a = 3;
+				LCD_DrawFilledRect(17, 90+y1, 32, a, convertColor(0,0,255));
+				y1 =  y1- a;
+			}
 		}
 		else{
-			int b = rand()% 10;
-			y1 = y1 - b;
+			if( y1 < 60){
+				int b = 3;
+				LCD_DrawFilledRect(17, 90+y1, 32, b, convertColor(0,0,0));
+				y1 = y1 + b;
+			}
 		}
-		
-		if( rand()% 2 == 1){
-		int a = rand()% 10;
-			y4 = y3 - a;
-			y3 = y3 + a;
-		}
-		else{
-			int b = rand()% 10;
-			y3 = y3 - b;
-		}
-		
-		if( rand()% 2 == 1){
-		int a = rand()% 10;
-			y6 = y5 - a;
-			y5 = y5 + a;
+	//second bar
+		if(rand()% 2 == 1){
+			if (y2 > -90){
+				int a = 3;
+				LCD_DrawFilledRect(49, 120+y2, 32, a, convertColor(0,255,0));
+				y2 = y2-a;
+			}
 		}
 		else{
-			int b = rand()% 10;
-			y5 = y5 - b;
+			if(y2 < 80){
+				int b = 3;
+				LCD_DrawFilledRect(49, 120+y2, 32, b, convertColor(0,0,0));
+				y2 = y2 + b;
+			}
+		}
+	//third bar
+		if(rand()% 2 == 1){
+			if (y3 > -40){
+				int a = 3;
+				LCD_DrawFilledRect(81, 50+y3, 32, a, convertColor(255,0,0));
+				y3 = y3-a;
+			}
+		}
+		else{
+			if(y3 < 120){
+				int b = 3;
+				LCD_DrawFilledRect(81, 50+y3, 32, b, convertColor(0,0,0));
+				y3 = y3 + b;
+			}
+		}
+		//fourth bar
+		if(rand()% 2 == 1){
+			if (y4 > -40){
+				int a = 3;
+				LCD_DrawFilledRect(113, 81+y4, 32, a, convertColor(0,0,255));
+				y4 = y4-a;
+			}
+		}
+		else{
+			if(y4 < 110){
+				int b = 3;
+				LCD_DrawFilledRect(113, 81+y4, 32, b, convertColor(0,0,0));
+				y4 = y4 + b;
+			}
+		}
+		//fifth bar
+		if(rand()% 2 == 1){
+			if (y5 > -130){
+				int a = 3;
+				LCD_DrawFilledRect(145, 76+y5, 32, a, convertColor(0,255,0));
+				y5 = y5-a;
+			}
+		}
+		else{
+			if(y5 < 80){
+				int b = 3;
+				LCD_DrawFilledRect(145, 76+y5, 32, b, convertColor(0,0,0));
+				y5 = y5 + b;
+			}
+		}
+		//sixth bar
+		if(rand()% 2 == 1){
+			if (y6 > -40){
+				int a = 3;
+				LCD_DrawFilledRect(177, 130+y6, 32, a, convertColor(255,0,0));
+				y6 = y6-a;
+			}
+		}
+		else{
+			if(y6 < 40){
+				int b = 3;
+				LCD_DrawFilledRect(177, 130+y6, 32, b, convertColor(0,0,0));
+				y6 = y6 + b;
+			}
+		}
+		//seventh bar
+		if(rand()% 2 == 1){
+			if (y7 > -40){
+				int a = 3;
+				LCD_DrawFilledRect(209, 40+y7, 32, a, convertColor(0,0,255));
+				y7 = y7-a;
+			}
+		}
+		else{
+			if(y7 < 40){
+				int b = 3;
+				LCD_DrawFilledRect(209, 40+y7, 32, b, convertColor(0,0,0));
+				y7 = y7 + b;
+			}
+		}
+		//eigth bar
+		if(rand()% 2 == 1){
+			if (y8 > -10){
+				int a = 3;
+				LCD_DrawFilledRect(241, 110+y8, 32, a, convertColor(0,255,0));
+				y8 = y8-a;
+			}
+		}
+		else{
+			if(y8 < 10){
+				int b = 3;
+				LCD_DrawFilledRect(241, 110+y8, 32, b, convertColor(0,0,0));
+				y8 = y8 + b;
+			}
+		}
+		//ninth bar
+		if(rand()% 2 == 1){
+			if (y9 > -100){
+				int a = 3;
+				LCD_DrawFilledRect(273, 140+y9, 32, a, convertColor(255,0,0));
+				y9 = y9-a;
+			}
+		}
+		else{
+			if(y9 < 70){
+				int b = 3;
+				LCD_DrawFilledRect(273, 140+y9, 32, b, convertColor(0,0,0));
+				y9 = y9 + b;
+			}
 		}
 }
 
+void 	DestabilizeBars(){
+		dlay();
+		dlay();
+		dlay();
+			if( y1 < 130){
+				int b = 1;
+				LCD_DrawFilledRect(17, 90+y1, 32, b, convertColor(0,0,0));
+				y1 = y1 + b;
+			}
+			if(y2 < 100){
+				int b = 1;
+				LCD_DrawFilledRect(49, 120+y2, 32, b, convertColor(0,0,0));
+				y2 = y2 + b;
+			}
+			if(y3 < 170){
+				int b = 1;
+				LCD_DrawFilledRect(81, 50+y3, 32, b, convertColor(0,0,0));
+				y3 = y3 + b;
+			}
+			if(y4 < 139){
+				int b = 1;
+				LCD_DrawFilledRect(113, 81+y4, 32, b, convertColor(0,0,0));
+				y4 = y4 + b;
+			}
+			if(y5 < 144){
+				int b = 1;
+				LCD_DrawFilledRect(145, 76+y5, 32, b, convertColor(0,0,0));
+				y5 = y5 + b;
+			}
+			if(y6 < 90){
+				int b = 1;
+				LCD_DrawFilledRect(177, 130+y6, 32, b, convertColor(0,0,0));
+				y6 = y6 + b;
+			}
+			if(y7 < 180){
+				int b = 1;
+				LCD_DrawFilledRect(209, 40+y7, 32, b, convertColor(0,0,0));
+				y7 = y7 + b;
+			}
+			if(y8 < 110){
+				int b = 1;
+				LCD_DrawFilledRect(241, 110+y8, 32, b, convertColor(0,0,0));
+				y8 = y8 + b;
+			}
+			if(y9 < 80){
+				int b = 1;
+				LCD_DrawFilledRect(273, 140+y9, 32, b, convertColor(0,0,0));
+				y9 = y9 + b;
+			}
+}
+void FinishBars(){
+		dlay();
+		dlay();
+		dlay();
+			if( y1 > -90){
+				int a = 1;
+				LCD_DrawFilledRect(17, 90+y1, 32, a, convertColor(0,0,255));
+				y1 = y1 - a;
+			}
+			if(y2 > -120){
+				int a = 1;
+				LCD_DrawFilledRect(49, 120+y2, 32, a, convertColor(0,255,0));
+				y2 = y2 - a;
+			}
+			if(y3 > -50){
+				int a = 1;
+				LCD_DrawFilledRect(81, 50+y3, 32, a, convertColor(255,0,0));
+				y3 = y3 - a;
+			}
+			if(y4 > -81){
+				int a = 1;
+				LCD_DrawFilledRect(113, 81+y4, 32, a, convertColor(0,0,255));
+				y4 = y4 - a;
+			}
+			if(y5 > -76){
+				int a = 1;
+				LCD_DrawFilledRect(145, 76+y5, 32, a, convertColor(0,255,0));
+				y5 = y5 - a;
+			}
+			if(y6 >-130){
+				int a = 1;
+				LCD_DrawFilledRect(177, 130+y6, 32, a, convertColor(255,0,0));
+				y6 = y6 - a;
+			}
+			if(y7 > -40){
+				int a = 1;
+				LCD_DrawFilledRect(209, 40+y7, 32, a, convertColor(0,0,255));
+				y7 = y7 - a;
+			}
+			if(y8 > -110){
+				int a = 1;
+				LCD_DrawFilledRect(241, 110+y8, 32, a, convertColor(0,255,0));
+				y8 = y8 - a;
+			}
+			if(y9 > -140){
+				int a = 1;
+				LCD_DrawFilledRect(273, 140+y9, 32, a, convertColor(255,0,0));
+				y9 = y9 - a;
+			}
+}
 void RandomColorFill(){
     long i;
     //long color = convertColor(Random() % 255,Random() % 255,Random() % 255);        

@@ -3,7 +3,7 @@ F (.\startup.s)(0x519AFBA2)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=inter
 F (.\DAC.c)(0x547F0BE7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..\inc/tm4c123gh6pm.h)(0x57730227)
-F (.\Lab5.c)(0x5775978D)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lab5.o --omf_browse .\lab5.crf --depend .\lab5.d)
+F (.\Lab5.c)(0x57781FCC)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lab5.o --omf_browse .\lab5.crf --depend .\lab5.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (Switch.h)(0x577563EE)
 I (DAC.h)(0x54317938)
@@ -13,7 +13,7 @@ I (SysTick.h)(0x5432C1FD)
 I (lm4f120h5qr.h)(0x57730226)
 I (SSD2119.h)(0x57730226)
 I (random.h)(0x57730226)
-I (LCDTests.h)(0x577597E9)
+I (LCDTests.h)(0x57781FC7)
 F (.\Music.c)(0x577565B6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\music.o --omf_browse .\music.crf --depend .\music.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (Switch.h)(0x577563EE)
@@ -47,7 +47,7 @@ I (Dac.h)(0x54317938)
 F (.\SSD2119.c)(0x57730226)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\ssd2119.o --omf_browse .\ssd2119.crf --depend .\ssd2119.d)
 I (lm4f120h5qr.h)(0x57730226)
 I (SSD2119.h)(0x57730226)
-F (.\LCDTests.h)(0x577597E9)()
+F (.\LCDTests.h)(0x57781FC7)()
 F (.\lm4f120h5qr.h)(0x57730226)()
 F (.\random.h)(0x57730226)()
 F (.\SSD2119.h)(0x57730226)()
