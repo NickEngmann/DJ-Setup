@@ -1,9 +1,9 @@
 Dependencies for Project 'TwoButtonPoll', Target 'TwoButtonPoll': (DO NOT MODIFY !)
 F (.\startup.s)(0x519AFBA2)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\DAC.c)(0x547F0BE7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
+F (.\DAC.c)(0x5778397B)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..\inc/tm4c123gh6pm.h)(0x57730227)
-F (.\Lab5.c)(0x57781FCC)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lab5.o --omf_browse .\lab5.crf --depend .\lab5.d)
+F (.\Lab5.c)(0x57784CD2)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lab5.o --omf_browse .\lab5.crf --depend .\lab5.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (Switch.h)(0x577563EE)
 I (DAC.h)(0x54317938)
@@ -13,8 +13,8 @@ I (SysTick.h)(0x5432C1FD)
 I (lm4f120h5qr.h)(0x57730226)
 I (SSD2119.h)(0x57730226)
 I (random.h)(0x57730226)
-I (LCDTests.h)(0x57781FC7)
-F (.\Music.c)(0x577565B6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\music.o --omf_browse .\music.crf --depend .\music.d)
+I (LCDTests.h)(0x57784BDF)
+F (.\Music.c)(0x577841BE)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\music.o --omf_browse .\music.crf --depend .\music.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (Switch.h)(0x577563EE)
 I (DAC.h)(0x54317938)
@@ -24,10 +24,10 @@ I (Music.h)(0x547EC449)
 I (SysTick.h)(0x5432C1FD)
 F (.\PLL.c)(0x53E947E6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\pll.o --omf_browse .\pll.crf --depend .\pll.d)
 I (PLL.h)(0x53E947F0)
-F (.\Switch.c)(0x577563EE)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\switch.o --omf_browse .\switch.crf --depend .\switch.d)
+F (.\Switch.c)(0x57784CD2)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\switch.o --omf_browse .\switch.crf --depend .\switch.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..\inc/tm4c123gh6pm.h)(0x57730227)
-F (.\Timer0A.c)(0x547CDA49)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\timer0a.o --omf_browse .\timer0a.crf --depend .\timer0a.d)
+F (.\Timer0A.c)(0x57784CD2)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\timer0a.o --omf_browse .\timer0a.crf --depend .\timer0a.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..//inc//tm4c123gh6pm.h)(0x57730227)
 I (Dac.h)(0x54317938)
@@ -40,14 +40,14 @@ F (.\SysTick.h)(0x5432C1FD)()
 F (.\SysTick.c)(0x5432C2B5)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..\inc/tm4c123gh6pm.h)(0x57730227)
-F (.\Timer1A.c)(0x54580AD7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\timer1a.o --omf_browse .\timer1a.crf --depend .\timer1a.d)
+F (.\Timer1A.c)(0x57784CD2)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\timer1a.o --omf_browse .\timer1a.crf --depend .\timer1a.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (..//inc//tm4c123gh6pm.h)(0x57730227)
-I (Dac.h)(0x54317938)
+I (DAC.h)(0x54317938)
 F (.\SSD2119.c)(0x57730226)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\ssd2119.o --omf_browse .\ssd2119.crf --depend .\ssd2119.d)
 I (lm4f120h5qr.h)(0x57730226)
 I (SSD2119.h)(0x57730226)
-F (.\LCDTests.h)(0x57781FC7)()
+F (.\LCDTests.h)(0x57784BDF)()
 F (.\lm4f120h5qr.h)(0x57730226)()
 F (.\random.h)(0x57730226)()
 F (.\SSD2119.h)(0x57730226)()

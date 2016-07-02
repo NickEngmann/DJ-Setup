@@ -27,11 +27,12 @@
  */
 #include <stdint.h>
 #include "..//inc//tm4c123gh6pm.h"
-#include "Dac.h"
+#include "DAC.h"
+
 
 extern uint32_t play, rewind, mode, pause;
 extern int i,j;
-extern const unsigned short Trumpet[32], Horn[32],Wave[64],Flute[32],dt[32];
+extern const unsigned short Trumpet[32], Horn[32],Wave[32],Flute[32],dt[32];
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -72,20 +73,9 @@ int count1 = 0;
 void Timer1A_Handler(void){
   count1++;
   TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge Timer1A timeout
-	if(count1==270){
-		lenPush1 = 1;
+	if(count1==200){
 		count1=0;
+		touchDebug();
 	}
-  //(*PeriodicTask)();                // execute user task
-	/*
-	Time = (Time+1)&0x1F;
-	DAC_Out(Wave[Time]);
-	    DAC_Out(Flute[Time&0x1F]);
-    Time = Time + 1;
-		TIMER1_TAILR_R = dt[Time];				//this time duration
-		TIMER1_ICR_R = TIMER_ICR_CAECINT; //acknowledge
-	*/
-
-
 
 }

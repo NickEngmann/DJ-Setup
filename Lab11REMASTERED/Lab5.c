@@ -17,10 +17,9 @@
 extern struct Songs *strobePtr;
 void Music_Play(const unsigned short, int, const struct Songs* song, int);
 extern uint32_t play, rewind, mode, pause;
-extern int i,j, lenPush;
 extern const unsigned short Trumpet[32], Horn[32],Wave[32],Flute[32],dt[32];
-int hor, flut = 0;
-int trump = 1;
+int instrument = 0;
+
 //--HeartBeat_Init--
 //Initialize PF2 Onboard Heartbeat
 void HeartBeat_Init(void){
@@ -43,22 +42,15 @@ int main(void){
 	HeartBeat_Init();
 	DAC_Init(1024);							// initialize with command: Vout = Vref
 	Timer0A_Init(dt[0]);
-	Board_Init();		//Initalize the On Board Switches
-	Switch_Init2(); //i used the board switches because our switches were doing the thing
-							//where they worked for a bit then they stopped working again
 	LCD_Init();  
     // Initialize RNG
   Random_Init(121213);
     // Initialize touchscreen GPIO
   Touch_Init();
-
-
-	lenPush = 1;
-	int instrument = 0;
-
+	//lenPush = 1;
   //for(i=0; i<50; i=i+1){
 	InitializeBars();
-  for(i=0; i<1000; i=i+1){
+  for(i=0; i<400; i=i+1){
 	MovingColorBars();
 	}
 	for(i=0; i<400; i=i+1){
@@ -72,25 +64,8 @@ int main(void){
   }
 	LCD_ColorFill(convertColor(0, 0, 0));
 	Buttons_Init();
-	touchDebug();	
+
 	while(1){
-		if(mode){
-			resetSwitches();			
-			if (instrument == 0){
-				Music_Play(Wave[0], 32, strobePtr, 35);	
-				instrument += 1;
-			}
-			else if (instrument == 1){
-				Music_Play(Trumpet[0], 32, strobePtr, 35);
-				instrument += 1;
-			}
-			else if (instrument == 2){
-				Music_Play(Flute[0], 32, strobePtr, 35);
-				instrument = 0;
-			}
-		}
-		else if(play){
-			resetSwitches();
 			if (instrument == 0){
 				Music_Play(Wave[0], 64, strobePtr, 35);		
 			}
@@ -100,6 +75,5 @@ int main(void){
 			if (instrument == 2){
 				Music_Play(Flute[0], 32, strobePtr, 35);
 			}
-		}
 	}
 }

@@ -48,54 +48,54 @@ void DAC_Init(void){ volatile unsigned long delay;
 } 
 int h = 0;
 void delay(void){
-	while(h < 1000){
-		h +=h;
+	while(h < 2){
+		h +=1;
 	}
 	h = 0;
 }
 void DAC_Out(unsigned char data){
  // faster
  PD0 = 0; // frame select low
-	//delay();
+	delay();
 // bit 7
  PD3 = data>>6; // bit 1 is high or low depending on bit 7
  PD1 = 2; // clock high
-	//delay();
+	delay();
  PD1 = 0; // clock low
 // bit 6
  PD3 = data>>5; // bit 1 is high or low depending on bit 6
  PD1 = 2; // clock high
-	//delay();
+	delay();
  PD1 = 0; // clock low
 // bit 5
  PD3 = data>>4; // bit 1 is high or low depending on bit 5
  PD1 = 2; // clock high
-//	delay();
+	delay();
  PD1 = 0; // clock low
 // bit 4
  PD3 = data>>3; // bit 1 is high or low depending on bit 4
  PD1 = 2; // clock high
-//	delay();
+	delay();
  PD1 = 0; // clock low
 // bit 3
  PD3 = data>>2; // bit 1 is high or low depending on bit 3
  PD1 = 2; // clock high
-// delay();
+ delay();
  PD1 = 0; // clock low
 // bit 2
  PD3 = data>>1; // bit 1 is high or low depending on bit 2
  PD1 = 2; // clock high
-// delay();
+ delay();
  PD1 = 0; // clock low
 // bit 1
  PD3 = data; // bit 1 is high or low depending on bit 1
  PD1 = 2; // clock high
-// delay();
+ delay();
  PD1 = 0; // clock low
 // bit 0
  PD3 = data<<1; // bit 1 is high or low depending on bit 0
  PD1 = 2; // clock high
- //delay();
+ delay();
  PD1 = 0; // clock low
  PD0 = 1; // frame select high
 } 

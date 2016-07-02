@@ -10,27 +10,24 @@ Project File Date:  06/30/2016
 Rebuild target 'TwoButtonPoll'
 assembling startup.s...
 compiling DAC.c...
-DAC.c(101): warning:  #1-D: last line of file ends without a newline
-  } 
-DAC.c: 1 warning, 0 errors
 compiling Lab5.c...
-LCDTests.h(83): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(86): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(98): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(101): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(113): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(116): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(128): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(131): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(143): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(146): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(158): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(161): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(173): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(176): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(188): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(191): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
-LCDTests.h(203): warning:  #223-D: function "rand" declared implicitly
+LCDTests.h(206): warning:  #223-D: function "rand" declared implicitly
                 if(rand()% 2 == 1){
 Lab5.c: 9 warnings, 0 errors
 compiling Music.c...
@@ -42,23 +39,120 @@ compiling Switch.c...
 compiling Timer0A.c...
 compiling SysTick.c...
 compiling Timer1A.c...
+Timer1A.c(78): warning:  #223-D: function "touchDebug" declared implicitly
+                touchDebug();
+Timer1A.c: 1 warning, 0 errors
 compiling SSD2119.c...
 assembling random.s...
 linking...
-Program Size: Code=11580 RO-data=1660 RW-data=1356 ZI-data=1348  
+Program Size: Code=9532 RO-data=1660 RW-data=1352 ZI-data=1352  
 ".\TwoButtonPoll.axf" - 0 Error(s), 11 Warning(s).
+
 Load "C:\\Users\\Nick\\Desktop\\DJ-Setup\\DJ-Setup\\Lab11REMASTERED\\TwoButtonPoll.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
-
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
-\\TwoButtonPoll.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
+l.axf: Error: L6200E: Symbol eNote multiply defined (by switch.o and lab5.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+".\TwoButtonPoll.axf" - 4 Error(s), 11 Warning(s).
+Target not created
+50): warning:  #223-D: function "rand" declared implicitly
+                if(rand()% 2 == 1){
+LCDTests.h(165): warning:  #223-D: function "rand" declared implicitly
+                if(rand()% 2 == 1){
+LCDTests.h(180): warning:  #223-D: function "rand" declared implicitly
+                if(rand()% 2 == 1){
+LCDTests.h(195): warning:  #223-D: function "rand" declared implicitly
+                if(rand()% 2 == 1){
+LCDTests.h(210): warning:  #223-D: function "rand" declared implicitly
+                if(rand()% 2 == 1){
+LCDTests.h(329): warning:  #223-D: function "Random" declared implicitly
+      long color = convertColor(255,Random() % 255,Random() % 255);         
+LCDTests.h(344): warning:  #223-D: function "Random" declared implicitly
+      long color = convertColor(Random() % 256,Random() % 256,Random() % 256);
+LCDTests.h(393): warning:  #223-D: function "Random" declared implicitly
+      LCD_DrawFilledCircle(Random()%280 + 20, Random()%200 + 20, 20, Random()%0xFFFF);    
+LCDTests.h(415): warning:  #223-D: function "Random" declared implicitly
+      LCD_DrawImage(testSprite4BPP, Random()%304, Random()%224, 16, 16, 4);
+LCDTests.h(492): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,Random() % 255,255);
+LCDTests.h(500): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
+LCDTests.h(508): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(255,Random() % 255,Random() % 255);
+LCDTests.h(516): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,255,Random() % 255);
+LCDTests.h(526): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
+LCDTests.h(534): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(255,Random() % 255,Random() % 255);
+LCDTests.h(542): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,255,Random() % 255);
+LCDTests.h(550): warning:  #223-D: function "Random" declared implicitly
+                                                randomcolor = convertColor(Random() % 255,Random() % 255,255);
+Timer1A.c: 23 warnings, 0 errors
+compiling SSD2119.c...
+assembling random.s...
+linking...
+.\TwoButtonPoll.axf: Error: L6200E: Symbol testSprite4BPP multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol x multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol i multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol instrument multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol yVal multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol xVal multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol z1Val multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol z2Val multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol Touched multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchCounter multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR2C1 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR2C2 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR2C3 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR2C4 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR3C1 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR3C2 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR3C3 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TouchR3C4 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol firstfac multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol secondfac multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol yValold multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y1 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y2 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y3 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y4 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y5 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y6 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y7 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y8 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol y9 multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol slowflag multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol randomcolor multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol BWWaitFill multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol BlastChars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol Buttons_Init multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol CircleButtons multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol DestabilizeBars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol FinishBars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol InitializeBars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol LineSpin multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol MovingColorBars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol PrintAsciiChars multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol Print_TouchCoords multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol Random4BPPTestSprite multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol RandomCircle multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol RandomColorFill multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol RandomRectangles multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol TestStringOutput multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol charTest multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol dlay multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol printfTest multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol sizeofStuff multiply defined (by timer1a.o and lab5.o).
+.\TwoButtonPoll.axf: Error: L6200E: Symbol touchDebug multiply defined (by timer1a.o and lab5.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 54 error messages.
+".\TwoButtonPoll.axf" - 54 Error(s), 33 Warning(s).
+Target not created

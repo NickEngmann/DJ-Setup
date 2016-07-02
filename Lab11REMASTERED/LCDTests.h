@@ -6,6 +6,9 @@ extern unsigned short cursorY;
 int x = 0;
 int y = 0;
 int i = 0;  
+extern volatile uint32_t bNote, fNote, aNote, eNote;
+
+
 
 const unsigned char testSprite4BPP[] = {
  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
@@ -402,14 +405,7 @@ void Buttons_Init(){
 		LCD_DrawFilledRect(80, 160, 80, 80, convertColor(36,39,255)); //Blue Button
 		LCD_DrawFilledRect(160, 160, 80, 80, convertColor(36,255,36)); //Green Button
 		LCD_DrawFilledRect(240, 160, 80, 80, convertColor(255,255,36)); //Yellow Button
-		//CircleButtons(50, 200, 35, convertColor(255,36,36));
-		//CircleButtons(125, 200, 35, convertColor(36,39,255));
-		//CircleButtons(200, 200, 35, convertColor(36,255,36));
-		//CircleButtons(275, 200, 35, convertColor(255,255,36));
-		//CircleButtons(200, 120, 30, convertColor(255,36,36));
-		//CircleButtons(200, 200, 30, convertColor(255,36,36));
-		//CircleButtons(275, 120, 30, convertColor(255,36,36));
-		//CircleButtons(275, 200, 30, convertColor(255,36,36));
+
 }
 void Random4BPPTestSprite(){
     LCD_DrawImage(testSprite4BPP, Random()%304, Random()%224, 16, 16, 4);
@@ -439,24 +435,16 @@ long yValold = 0;
 long randomcolor;
 void touchDebug(){
         long temp, blahX, blahY; 
-     
-        // do stuff every however often here
+			
+        // Read Variables
         yVal = Touch_ReadY();      // 24-14
         xVal = Touch_ReadX();      // 29-16
         z1Val = Touch_ReadZ1();
         z2Val = Touch_ReadZ2();
-
         temp = Touch_GetCoords();
         blahX = (temp >> 16);
         blahY = temp & 0xFFFF;
-				//This phrase is needed for all print statements.
-				LCD_Goto(0,0);
-				printf("TC = %d\n",
-					TouchCounter);
-				printf("R2C1 = %d R2C2 = %d R2C3 = %d R2C4 = %d\n",
-					TouchR2C1,TouchR2C2,TouchR2C3,TouchR2C4);
-				printf("R3C1 = %d R3C2 = %d R3C3 = %d R3C4 = %d\n",
-					TouchR3C1,TouchR3C2,TouchR3C3,TouchR3C4);
+
 		if(yVal > 270+yValold  || yVal < yValold-270){			
 				if(yVal != 376){	
 					if(yVal != 0){
@@ -469,6 +457,10 @@ void touchDebug(){
 					yValold = yVal;
 						}
 			if(firstfac == 1 && secondfac == 0){
+				//eNote = 1;                  // signal SW1 occurred
+				//bNote = 1;                  // signal SW1 occurred
+				//fNote = 1;                  // signal SW1 occurred
+				//aNote = 1;                  // signal SW1 occurred
         TouchCounter++;
         if(TouchCounter >= 100){
             TouchCounter = 0;
@@ -478,69 +470,77 @@ void touchDebug(){
 				
 				//Row 2 (Middle)
 				//Row 2(Middle) Column 1(Left Edge) Corner
-				if(blahX < 295 && blahX > 235){
-					if(blahY <235 && blahY > 210){
+				if(blahX < 320 && blahX > 265){
+					if(blahY <235 && blahY > 185){
 						TouchR2C1++;
 						randomcolor = convertColor(Random() % 255,Random() % 255,255);
 						LCD_DrawFilledRect(0, 80, 80, 80, randomcolor);
+						eNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 2(Middle) Column 2(Left of Middle) Corner
-				if(blahX < 225 && blahX > 180){
-					if(blahY <210 && blahY > 170){
+				if(blahX < 240 && blahX > 186){
+					if(blahY <230 && blahY > 170){
 						TouchR2C2++;
 						randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
 						LCD_DrawFilledRect(80, 80, 80, 80, randomcolor);
+						fNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 2(Middle) Column 3(Right of Middle) Corner
-				if(blahX < 170 && blahX > 125){
-					if(blahY <196 && blahY > 160){
+				if(blahX < 180 && blahX > 115){
+					if(blahY <240 && blahY > 165){
 						TouchR2C3++;
 						randomcolor = convertColor(255,Random() % 255,Random() % 255);
 						LCD_DrawFilledRect(160, 80, 80, 80, randomcolor);
+						aNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 2(Middle) Column 4(Right Edge) Corner
-				if((blahX < 110) && (blahX > 80)){
-					if((200 > blahY)&&(blahY > 165)){
+				if((blahX < 100) && (blahX > 65)){
+					if((240 > blahY)&&(blahY > 170)){
 						TouchR2C4++;
 						randomcolor = convertColor(Random() % 255,255,Random() % 255);
 						LCD_DrawFilledRect(240, 80, 80, 80, randomcolor);
+						bNote = 1;                  // signal SW1 occurred
 					}
 				}
 				
 				//Row 3(Bottom)
 				//Row 3(Bottom) Column 1(Left Edge) Corner
-				if(blahX < 290 && blahX > 235){
-					if(blahY <305 && blahY > 260){
+				if(blahX < 330 && blahX > 270){
+					if(blahY <315 && blahY > 260){
 						TouchR3C1++;
 						randomcolor = convertColor(Random() % 255,Random() % 255,Random() % 255);
 						LCD_DrawFilledRect(0, 160, 80, 80, randomcolor);
+						bNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 3(Bottom) Column 2(Left of Middle) Corner
-				if(blahX < 215 && blahX > 185){
-					if(blahY <280 && blahY > 230){
+				if(blahX < 240 && blahX > 190){
+					if(blahY <300 && blahY > 255){
 						TouchR3C2++;
 						randomcolor = convertColor(255,Random() % 255,Random() % 255);
 						LCD_DrawFilledRect(80, 160, 80, 80, randomcolor);
+						aNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 3(Bottom) Column 3(Right of Middle) Corner
-				if(blahX < 170 && blahX > 120){
-					if(blahY <260 && blahY > 230){
+				if(blahX < 180 && blahX > 125){
+					if(blahY <300 && blahY > 245){
 						TouchR3C3++;
 						randomcolor = convertColor(Random() % 255,255,Random() % 255);
 						LCD_DrawFilledRect(160, 160, 80, 80, randomcolor);
+						eNote = 1;                  // signal SW1 occurred
 					}
 				}
 				//Row 3(Bottom) Column 4(Right Edge) Corner
-				if((110 > blahX) && (blahX > 80)){
-					if((260 > blahY) && (blahY > 220)){
+				if((115 > blahX) && (blahX > 60)){
+					if((310 > blahY) && (blahY > 240)){
 						TouchR3C4++;
 						randomcolor = convertColor(Random() % 255,Random() % 255,255);
 						LCD_DrawFilledRect(240, 160, 80, 80, randomcolor);
+						fNote = 1;                  // signal SW1 occurred
 					}
 				}
 				secondfac = 1;
@@ -548,7 +548,15 @@ void touchDebug(){
 
 			yValold = yVal;
 			}
-			printf("xVal:%d     yVal:%d     \nxPos:%d     yPos:%d    ", xVal, yVal, blahX, blahY);
+			//This phrase is needed for all print statements.
+				/*LCD_Goto(0,0);
+				printf("TC = %d\n",
+					TouchCounter);
+				printf("R2C1 = %d R2C2 = %d R2C3 = %d R2C4 = %d\n",
+					TouchR2C1,TouchR2C2,TouchR2C3,TouchR2C4);
+				printf("R3C1 = %d R3C2 = %d R3C3 = %d R3C4 = %d\n",
+					TouchR3C1,TouchR3C2,TouchR3C3,TouchR3C4);	
+				printf("xVal:%d     yVal:%d     \nxPos:%d     yPos:%d    ", xVal, yVal, blahX, blahY);*/
 }
 
 void Print_TouchCoords(void){

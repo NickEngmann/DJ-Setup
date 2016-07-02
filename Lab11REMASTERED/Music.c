@@ -52,11 +52,8 @@ void Music_Play(const unsigned short *instrument, int instrumentSize, const stru
 		
 		if(lenPush&&!pause){
 			Timer0A_Init(demoPtr->duration[noteIndex]);
-			Timer1A_Init(demoPtr->duration[noteIndex]);
-			//SysTick_Init(402000/(song->notes[noteIndex]));
-			//SysTick_Init(402000/(furElisePtr->notes[noteIndex]));
-			SysTick_Init(402000/(demoPtr->notes[noteIndex]));
-			//SysTick_Init(402000/(demo1Ptr->notes[noteIndex])); 			
+			Timer1A_Init(800);
+			SysTick_Init(402000/(demoPtr->notes[noteIndex]));			
 			noteIndex=(noteIndex+1)%(songSize);
 		}
 		if(notePush&&!pause){

@@ -76,16 +76,4 @@ void Timer0A_Handler(void){
 		lenPush = 1;
 		counter=0;
 	}
-  //(*PeriodicTask)();                // execute user task
-	/*
-	Time = (Time+1)&0x1F;
-	DAC_Out(Wave[Time]);
-	    DAC_Out(Flute[Time&0x1F]);
-    Time = Time + 1;
-		TIMER0_TAILR_R = dt[Time];				//this time duration
-		TIMER0_ICR_R = TIMER_ICR_CAECINT; //acknowledge
-	*/
-
-
-
 }
