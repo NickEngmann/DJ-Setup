@@ -64,7 +64,7 @@ int main(void){
   }
 	LCD_ColorFill(convertColor(0, 0, 0));
 	Buttons_Init();
-
+	play = 0;
 	while(1){
 			if (instrument == 0){
 				Music_Play(Wave[0], 64, strobePtr, 35);		

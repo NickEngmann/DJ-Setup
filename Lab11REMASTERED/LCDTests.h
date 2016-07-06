@@ -1,6 +1,5 @@
 #include "SSD2119.h"
 
-
 extern unsigned short cursorX;
 extern unsigned short cursorY;
 int x = 0;
@@ -392,9 +391,92 @@ void RandomCircle(){
 void CircleButtons(unsigned short x, unsigned short y, unsigned short radius, short color){
 	LCD_DrawFilledCircle(x, y, radius, color);
 }
+void DrawPlayOn(){
+	for( int yplay = 10; yplay < 71; yplay++){
+		LCD_DrawLine(30, yplay, 80, 40, convertColor(255,0,0));
+
+	}
+}
+void DrawPlayOff(){
+	for( int yplay = 10; yplay < 71; yplay++){
+		LCD_DrawLine(30, yplay, 80, 40, convertColor(0,0,0));
+
+	}
+}
+void DrawClearOff(){
+			LCD_DrawLine(250, 10, 310, 70, convertColor(0,0,0));
+			LCD_DrawLine(251, 10, 310, 69, convertColor(0,0,0));
+			LCD_DrawLine(252, 10, 310, 68, convertColor(0,0,0));
+			LCD_DrawLine(253, 10, 310, 67, convertColor(0,0,0));
+			LCD_DrawLine(254, 10, 310, 66, convertColor(0,0,0));
+			LCD_DrawLine(255, 10, 310, 65, convertColor(0,0,0));
+			LCD_DrawLine(256, 10, 310, 64, convertColor(0,0,0));
+			LCD_DrawLine(257, 10, 310, 63, convertColor(0,0,0));
+			LCD_DrawLine(258, 10, 310, 62, convertColor(0,0,0));
+			LCD_DrawLine(259, 10, 310, 61, convertColor(0,0,0));
+			LCD_DrawLine(260, 10, 310, 60, convertColor(0,0,0));
+	
+			LCD_DrawLine(250, 70, 310, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 69, 309, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 68, 308, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 67, 307, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 66, 306, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 65, 305, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 64, 304, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 63, 303, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 62, 302, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 61, 301, 10, convertColor(0,0,0));
+			LCD_DrawLine(250, 60, 300, 10, convertColor(0,0,0));
+}
+void DrawClearOn(){
+			LCD_DrawLine(250, 10, 310, 70, convertColor(255,0,0));
+			LCD_DrawLine(251, 10, 310, 69, convertColor(255,0,0));
+			LCD_DrawLine(252, 10, 310, 68, convertColor(255,0,0));
+			LCD_DrawLine(253, 10, 310, 67, convertColor(255,0,0));
+			LCD_DrawLine(254, 10, 310, 66, convertColor(255,0,0));
+			LCD_DrawLine(255, 10, 310, 65, convertColor(255,0,0));
+			LCD_DrawLine(256, 10, 310, 64, convertColor(255,0,0));
+			LCD_DrawLine(257, 10, 310, 63, convertColor(255,0,0));
+			LCD_DrawLine(258, 10, 310, 62, convertColor(255,0,0));
+			LCD_DrawLine(259, 10, 310, 61, convertColor(255,0,0));
+			LCD_DrawLine(260, 10, 310, 60, convertColor(255,0,0));
+	
+			LCD_DrawLine(250, 70, 310, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 69, 309, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 68, 308, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 67, 307, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 66, 306, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 65, 305, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 64, 304, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 63, 303, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 62, 302, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 61, 301, 10, convertColor(255,0,0));
+			LCD_DrawLine(250, 60, 300, 10, convertColor(255,0,0));
+}
+
 void Buttons_Init(){
 	//Top Row Buttons
-		//LCD_DrawFilledRect(0, 0, 80, 80, convertColor(255,36,36));
+		LCD_DrawFilledRect(0, 0, 320, 80, convertColor(255,255,255));
+		//Play/Pause Buttons
+		LCD_DrawFilledRect(90, 10, 10, 60, convertColor(0,0,0)); //Pause Button
+		LCD_DrawFilledRect(105, 10, 10, 60, convertColor(0,0,0)); //Pause Button
+		DrawPlayOn();
+		LCD_DrawRect(0,0,159,79, convertColor(0,0,0));
+		LCD_DrawRect(0,0,158,78, convertColor(0,0,0));
+		LCD_DrawRect(0,0,157,77, convertColor(0,0,0));
+		LCD_DrawRect(0,0,156,76, convertColor(0,0,0));
+		//Hold Button
+		LCD_DrawFilledCircle(199,38,30,convertColor(0,0,0));
+		LCD_DrawRect(160,0,78,79, convertColor(0,0,0));
+		LCD_DrawRect(160,0,79,78, convertColor(0,0,0));
+		LCD_DrawRect(160,0,80,77, convertColor(0,0,0));
+		LCD_DrawRect(160,0,81,76, convertColor(0,0,0));
+		//Clear Button
+		DrawClearOff();
+		LCD_DrawRect(240,0,78,79, convertColor(0,0,0));
+		LCD_DrawRect(240,0,79,78, convertColor(0,0,0));
+		LCD_DrawRect(240,0,80,77, convertColor(0,0,0));
+		LCD_DrawRect(240,0,81,76, convertColor(0,0,0));
 	//Middle Row Buttons	
 		LCD_DrawFilledRect(0, 80, 80, 80, convertColor(255,255,36)); //Yellow Button
 		LCD_DrawFilledRect(80, 80, 80, 80, convertColor(255,36,36)); //Red Button
@@ -414,6 +496,9 @@ void Random4BPPTestSprite(){
 
 
 /////////////////////////////////////////////// TOUCHSCREEN STUFF ////////////////////////////////////
+short pplay = 0;
+short hold = 0;
+short clear = 0;
 
 long yVal = 0;
 long xVal = 0;
@@ -429,6 +514,7 @@ long TouchR3C1 = 0;
 long TouchR3C2 = 0;
 long TouchR3C3 = 0;
 long TouchR3C4 = 0;
+long TCC, TCP, TCH;
 long firstfac = 0;
 long secondfac = 0;
 long yValold = 0;
@@ -457,17 +543,56 @@ void touchDebug(){
 					yValold = yVal;
 						}
 			if(firstfac == 1 && secondfac == 0){
-				//eNote = 1;                  // signal SW1 occurred
-				//bNote = 1;                  // signal SW1 occurred
-				//fNote = 1;                  // signal SW1 occurred
-				//aNote = 1;                  // signal SW1 occurred
         TouchCounter++;
         if(TouchCounter >= 100){
             TouchCounter = 0;
             Touched = 0;
         }
 				//specific if statements for location of touch:
-				
+				//Row 1 
+				//Row 1 (Play/Pause) Column 1+2(Left Edge + Left of Middle)
+				if(blahX < 310 && blahX > 190){
+					if(blahY < 160 && blahY > 110 ){
+						if(pplay == 0){
+								DrawPlayOn();
+								LCD_DrawFilledRect(90, 10, 10, 60, convertColor(0,0,0)); //Pause Button
+								LCD_DrawFilledRect(105, 10, 10, 60, convertColor(0,0,0)); //Pause Button
+								pplay++;
+						}
+						else{
+							DrawPlayOff();
+							LCD_DrawFilledRect(90, 10, 10, 60, convertColor(255,0,0)); //Pause Button
+							LCD_DrawFilledRect(105, 10, 10, 60, convertColor(255,0,0)); //Pause Button
+								pplay = 0;
+						}
+					}
+				}				
+				//Row 1 (Hold) Column 3(Right of Middle)
+				if(blahX < 160 && blahX > 100){
+					if(blahY < 125 && blahY > 70 ){
+						if(hold == 0){
+								LCD_DrawFilledCircle(199,38,30,convertColor(0,0,0));
+								hold++;
+						}
+						else{
+								LCD_DrawFilledCircle(199,38,30,convertColor(255,0,0));
+								hold = 0;
+						}
+					}
+				}
+				//Row 1 (Clear) Column 4(Right Corner)
+				if(blahX < 95 && blahX > 50){
+					if(blahY < 140 && blahY > 105 ){
+						if(clear == 0){
+							DrawClearOn();
+							clear++;
+						}
+						if(clear == 1){
+							DrawClearOff();
+							clear= 0;
+						}
+					}
+				}
 				//Row 2 (Middle)
 				//Row 2(Middle) Column 1(Left Edge) Corner
 				if(blahX < 320 && blahX > 265){
@@ -552,6 +677,8 @@ void touchDebug(){
 				/*LCD_Goto(0,0);
 				printf("TC = %d\n",
 					TouchCounter);
+				printf("Play = %d Hold = %d Clear = %d\n",
+					TCP,TCH,TCC);
 				printf("R2C1 = %d R2C2 = %d R2C3 = %d R2C4 = %d\n",
 					TouchR2C1,TouchR2C2,TouchR2C3,TouchR2C4);
 				printf("R3C1 = %d R3C2 = %d R3C3 = %d R3C4 = %d\n",
